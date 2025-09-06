@@ -20,5 +20,5 @@ data "aws_secretsmanager_random_password" "secret" {
 
 resource "aws_secretsmanager_secret_version" "secret" {
   secret_id     = aws_secretsmanager_secret.secret
-  secret_string = aws_secretsmanager_random_password.random_password
+  secret_string = data.aws_secretsmanager_random_password.random_password
 }
